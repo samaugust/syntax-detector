@@ -15,8 +15,8 @@ const detector = new SyntaxDetector();
 #### 2) Train the instance by giving it codebases written in various programming languages, making sure to identify the language.
 
 ```javascript
-var jsCodeSnippet = "function javascriptFunction(input1, input2) {return input1 + input2};"
-var rubyCodeSnippet = "def ruby_method(input1, input2)\n input1+input2\n end"
+var jsCodeSnippet = "function javascriptFunction(input1, input2) {return input1 + input2};";
+var rubyCodeSnippet = "def ruby_method(input1, input2)\n input1+input2\n end";
 detector.train(jsCodeSnippet, "Javascript");
 detector.train(rubyCodeSnippet, "Ruby");
 ```
@@ -24,5 +24,5 @@ detector.train(rubyCodeSnippet, "Ruby");
 #### 3) Once it is sufficiently trained, it will identify the language without your explicitly specifiying it.
 
 ```
-detector.detect(jsCodeSnippet) //returns "Javascript"
+detector.detect(jsCodeSnippet); //returns "Javascript"
 ```
