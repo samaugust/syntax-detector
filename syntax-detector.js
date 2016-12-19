@@ -43,6 +43,6 @@ with the language through training.*/
 
 SyntaxDetector.prototype.detect = function(code) {
   const words = this.words(code);
-  let correlation = lang => words.map(w=>Math.log(this.data[lang][w] || 1)).reduce((a,b)=>a+b);
+  const correlation = lang => words.map(w=>Math.log(this.data[lang][w] || 1)).reduce((a,b)=>a+b);
   return Object.keys(this.data).sort((a,b)=>correlation(b)-correlation(a))[0];
 };
